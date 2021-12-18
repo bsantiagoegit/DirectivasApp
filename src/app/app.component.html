@@ -1,0 +1,51 @@
+<div class="container-fluid">
+  <h1 style="text-align: center;" class="text text-primary">{{title}}</h1>
+
+  <form action="">
+    <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre" [(ngModel)]="name"><br>
+    <input class="form-control" type="text" name="apellido" id="apellido" placeholder="Apellido"
+      [(ngModel)]="lastname"><br>
+    <button type="button" class="btn btn-success" (click)="UserRegister()" data-bs-toggle="modal"
+      data-bs-target="#myModal">RGISTRAR</button>
+  </form><br>
+
+  <p class="text text-secondary" *ngIf="register; else unregister">{{msj1}} <b>{{name}} {{lastname}}</b> {{msj2}}</p>
+
+  <ng-template #unregister>
+    <h3 class="text text-warning"><b>Nadie Registrado...!</b></h3>
+  </ng-template>
+  <br><br>
+
+  <!-- <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title text text-success">REGISTRO COMPLETADO!</h4>
+          <button class="btn-close" type="button" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <p class="text text-secondary" *ngIf="register; else unregister">{{msj1}} <b>{{name}} {{lastname}}</b>
+            {{msj2}}</p>
+
+          <ng-template #unregister>
+            <p class="text text-warning">Nadie Registrado...!</p>
+          </ng-template>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  <!-- <ng-template #unregister>
+    <p class="text text-warning">Nadie Registrado...!</p>
+  </ng-template> -->
+  <!-- <p class="text text-success" *ngIf="register"><b>El usuario <b class="text text-danger">{{name}} {{lastname}}</b> {{mensaje}}</b></p> -->
+
+  <!-- DIRECTIVA FOR -->
+  <ul>
+    <li *ngFor="let lista of listas">{{lista.titulo}}</li>
+  </ul>
+
+</div>
